@@ -1,6 +1,4 @@
-import {
-    defineConfig
-} from 'vite';
+import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from "@tailwindcss/vite";
 
@@ -14,5 +12,8 @@ export default defineConfig({
     ],
     server: {
         cors: true,
+    },
+    preview: {
+        allowedHosts: ['produ-ac-1-dis-web.onrender.com'], // 👈 AGREGA ESTO
     },
 });
