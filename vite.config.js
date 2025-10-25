@@ -14,6 +14,7 @@ export default defineConfig({
         cors: true,
     },
     preview: {
-        allowedHosts: ['produ-ac-1-dis-web.onrender.com'], // 👈 AGREGA ESTO
-    },
+    allowedHosts: ['*'],
+},
+
 });
