@@ -20,17 +20,32 @@
   </header>
 
   <main>
-    <section>
-    <h2 style="text-align: center; font-size: 2.5em;">¿Qué es?</h2>
-</section>
-<section>
-    <p>
-HTML (Lenguaje de Marcas de Hipertexto, del inglés HyperText Markup Language) es el componente más básico de la Web. Define el significado y la estructura del contenido web. Además de HTML, generalmente se utilizan otras tecnologías para describir la apariencia/presentación de una página web (CSS) o la funcionalidad/comportamiento (JavaScript). "Hipertexto" hace referencia a los enlaces que conectan páginas web entre sí, ya sea dentro de un único sitio web o entre sitios web. Los enlaces son un aspecto fundamental de la Web. Al subir contenido a Internet y vincularlo a las páginas creadas por otras personas, te conviertes en un participante activo en la «World Wide Web» (Red Informática Mundial). HTML utiliza "marcas" para etiquetar texto, imágenes y otro contenido para mostrarlo en un navegador Web. Las marcas HTML incluyen elementos especiales como head, title, body, header, footer, article, section, p, div, span, img, aside, audio, canvas, datalist, details, embed, nav, output, progress, video, ul, ol, li y muchos otros. Un elemento HTML se distingue de otro texto en un documento mediante "etiquetas", que consisten en el nombre del elemento rodeado por "<" y ">". El nombre de un elemento dentro de una etiqueta no distingue entre mayúsculas y minúsculas. Es decir, se puede escribir en mayúsculas, minúsculas o una mezcla. Por ejemplo, la etiqueta title se puede escribir como Title, TITLE o de cualquier otra forma. Los siguientes artículos pueden ayudarte a obtener más información sobre HTML.
-</p>
-</section>
-  
-
+    <h2>PRODUCTO ACADEMICO 1</h2>
+    <p>Bienvenido a este sitio web, desarrollado como parte del trabajo práctico individual del consolidado 1. El objetivo de este proyecto es demostrar la aplicación de HTML5 y CSS3 para el maquetado básico de una página web, integrando elementos esenciales como encabezados, párrafos, listas, enlaces e imágenes, así como el uso de hojas de estilo para diseñar una presentación coherente y atractiva. A través de este sitio, se refleja la capacidad de estructurar contenido, aplicar estilos, manejar colores, unidades de medida y efectos visuales, cumpliendo con los objetivos de aprendizaje de la unidad y mostrando un diseño funcional y educativo.</p>
     
+    <h3>Lista de temas principales:</h3>
+ <ul>
+  <li>
+    Elementos HTML básicos
+    <p class="concepto">Son las etiquetas fundamentales que permiten estructurar contenido en una página web.</p>
+  </li>
+  <li>
+    Texto y Listas
+    <p class="concepto">Permiten organizar y dar formato a la información mediante párrafos, listas ordenadas y desordenadas.</p>
+  </li>
+  <li>
+    <a href="{{ route('contacto') }}">Enlaces internos</a>
+    <p class="concepto">Permiten navegar entre diferentes secciones o páginas dentro de un mismo sitio web.</p>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/adriel-louis-pillpa-ch%C3%A1vez-102816207/" target="_blank" rel="noopener noreferrer">Enlaces externos</a>
+    <p class="concepto">Dirigen al usuario a páginas fuera de tu sitio web.</p>
+  </li>
+  <li class="led">
+    CSS3 y colores
+    <p class="concepto">CSS3 permite aplicar estilos visuales, colores y efectos a los elementos de la página.</p>
+  </li>
+</ul>
 
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe2mWw4v084HGRQwxfx1F0I_tSO3NnH1v1jg&s" alt="Descripción de la imagen">
 
