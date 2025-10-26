@@ -23,4 +23,5 @@ RUN npm install && npm run build || true
 EXPOSE 8000
 
 # Comando para iniciar Laravel
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+
