@@ -1,33 +1,24 @@
-# Imagen base de PHP con extensiones necesarias
-FROM php:8.3-fpm
+# Imagen base con PHP y Composer
+FROM php:8.3-cli
 
-# Instala dependencias del sistema
-RUN apt-get update && apt-get install -y \
-    git curl libpng-dev libonig-dev libxml2-dev zip unzip sqlite3 libsqlite3-dev
+# Instalar dependencias necesarias
+RUN apt-get update && apt-get install -y unzip git libzip-dev && docker-php-ext-install zip pdo pdo_mysql
 
-# Instala extensiones de PHP requeridas por Laravel
-RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite mbstring exif pcntl bcmath gd
+# Instalar Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Instala Composer (gestor de dependencias de PHP)
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Crear directorio de trabajo
+WORKDIR /var/www/html
 
-# Establece el directorio de trabajo
-WORKDIR /var/www
-
-# Copia el código del proyecto al contenedor
+# Copiar archivos del proyecto
 COPY . .
 
-# Instala dependencias de Laravel
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+# Instalar dependencias de PHP y de Node (si usas Vite)
+RUN composer install --no-interaction --no-scripts --no-dev && \
+    npm install && npm run build || true
 
-# Copia el archivo de entorno de ejemplo si no existe
-RUN cp .env.example .env || true
-
-# Genera la clave de la aplicación
-RUN php artisan key:generate
-
-# Expone el puerto 8000 para servir Laravel
+# Exponer el puerto que Railway usará
 EXPOSE 8000
 
-# Comando por defecto para ejecutar Laravel
+# Comando para ejecutar Laravel en 0.0.0.0
 CMD php artisan serve --host=0.0.0.0 --port=8000
